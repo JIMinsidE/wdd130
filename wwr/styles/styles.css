@@ -8,77 +8,172 @@
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #F9F9F9; /* Updated background for a modern look */
+    color: var(--text-color);
+    background-color: var(--accent1-color); /* Soft white background */
 }
 
 /* Color Palette */
 :root {
     --primary-color: #003366; /* Dark Blue */
     --secondary-color: #0073E6; /* Bright Blue */
-    --accent1-color: #FFFFFF; /* White */
+    --accent1-color: #F9F9F9; /* Light Gray-White */
     --accent2-color: #FFD700; /* Gold */
-    --text-color: #333; /* Default Text */
+    --text-color: #333; /* Default text color */
 }
 
 /* Header */
 header {
     background-color: var(--primary-color);
     color: var(--accent1-color);
-    padding: 1rem 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
 }
 
 header img {
     max-width: 150px;
-    margin: auto;
 }
 
 header h1 {
-    margin: 0.5rem 0;
     font-size: 2rem;
+    margin: 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    padding: 0;
+    gap: 1.5rem;
 }
 
 nav a {
     color: var(--accent1-color);
     text-decoration: none;
-    margin: 0 1rem;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
     color: var(--accent2-color);
 }
 
-/* Adventure Section */
+/* Main Section */
+main {
+    padding: 2rem;
+    background-color: var(--accent1-color); /* Soft white background for content */
+}
+
+/* History Section */
+.history-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.history-section p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+/* Adventures Section */
+.adventures-section {
+    margin-top: 2rem;
+}
+
+.adventures-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
 .adventure-images {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 
+.adventure-images img {
+    width: 100%;
+    border: 3px solid var(--secondary-color);
+    border-radius: 8px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.adventure-images img:hover {
+    transform: scale(1.05);
+    border-color: var(--accent2-color);
+}
+
+.adventure-images figcaption {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0.5rem;
+    color: var(--secondary-color);
+}
+
+/* Why Choose Us Section */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+ul li::before {
+    content: "✔";
+    color: var(--accent2-color);
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
     color: var(--accent1-color);
-    padding: 1rem 0;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .social-icons a img {
     width: 30px;
     height: 30px;
-    filter: brightness(0) invert(1); /* Ensures icons are visible on dark background */
-    transition: transform 0.3s;
+    filter: brightness(0) invert(1); /* Icons stand out on dark background */
+    transition: transform 0.3s, filter 0.3s;
 }
 
 .social-icons a:hover img {
     transform: scale(1.2);
+    filter: brightness(0.8) invert(0.8);
+}
+
+footer p {
+    margin: 0;
+    color: var(--accent2-color);
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .adventure-images {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 }
