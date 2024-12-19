@@ -18,6 +18,10 @@ body {
     --secondary-color: #4E88F7; /* Darker light blue */
     --accent1-color: #F1F1F1; /* Light gray/white */
     --accent2-color: #A8C2AB; /* Lighter green */
+    --btn-primary-bg: #4E88F7;
+    --btn-primary-hover: #3b6cbb;
+    --btn-secondary-bg: #A8C2AB;
+    --btn-secondary-hover: #8aa890;
 }
 
 /* Header */
@@ -55,64 +59,139 @@ nav a:hover {
     color: var(--secondary-color);
 }
 
-/* Intro Section */
-.intro-section {
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    background-image: url("images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--accent1-color);
+    padding: 3rem 1rem;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section .btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    text-align: center;
     padding: 2rem;
     background-color: var(--accent1-color);
-    text-align: center;
 }
 
-.intro-section h2 {
+.newsletter-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
+}
+
+.newsletter-section form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.newsletter-section input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletter-section button {
+    background-color: var(--btn-primary-bg);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.newsletter-section button:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+/* Trips Section */
+.trips-section {
+    padding: 2rem;
+    background-color: var(--accent1-color);
+}
+
+.trips-section h2 {
+    text-align: center;
     font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.intro-section p {
-    font-size: 1.2rem;
-    color: #444;
-}
-
-/* History Section */
-.history-section {
-    background-color: var(--accent2-color);
-    padding: 2rem;
-    text-align: left;
-    margin: 1rem 0;
-}
-
-.history-section h2 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
-.history-content p {
-    margin-bottom: 1rem;
-}
-
-/* Adventures Section */
-.adventures-section {
-    padding: 2rem;
-}
-
-.adventure-images {
+.trip-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
-.adventure-images figure {
+.trip {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.adventure-images img {
+.trip img {
     width: 100%;
     border-radius: 8px;
+    margin-bottom: 1rem;
 }
 
-.adventure-images figcaption {
-    margin-top: 0.5rem;
-    font-weight: bold;
+.trip h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.trip p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.trip .btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.trip .btn-secondary:hover {
+    background-color: var(--btn-secondary-hover);
 }
 
 /* Footer */
@@ -121,127 +200,269 @@ footer {
     color: var(--accent1-color);
     text-align: center;
     padding: 1rem;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .adventure-images {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-}
-
-            /*poll-form section:*/
-
-/* General Styling */
-body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header, footer {
-    background-color: #04045f; /* Dark blue */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
-
-h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-/* Main content styling */
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Form Styling */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-fieldset {
-    border: 2px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-legend {
-    font-weight: bold;
-    color: #04045f;
-    padding: 0 5px;
-}
-
-/* Input Elements */
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-input[type="checkbox"] {
-    width: auto;
-}
-
-textarea {
-    resize: vertical;
-}
-
-/* Button Styling */
-button {
-    background-color: #4E88F7; /* Darker light blue */
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #3b6cbb;
-}
-
-/* Footer */
-footer {
-    background-color: #04045f;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
+    margin-top: 1rem;
 }
 
 footer p {
     margin: 0;
     font-size: 1rem;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter-section form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .trip-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #F5F5F5;
+}
+
+/* Colors */
+:root {
+    --primary-color: #04045f; /* Dark blue */
+    --secondary-color: #4E88F7; /* Darker light blue */
+    --accent1-color: #F1F1F1; /* Light gray/white */
+    --accent2-color: #A8C2AB; /* Lighter green */
+    --btn-primary-bg: #4E88F7;
+    --btn-primary-hover: #3b6cbb;
+    --btn-secondary-bg: #A8C2AB;
+    --btn-secondary-hover: #8aa890;
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
+    padding: 1rem;
+}
+
+header img {
+    width: 100px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--accent1-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    background-image: url("images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--accent1-color);
+    padding: 3rem 1rem;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section .btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--accent1-color);
+}
+
+.newsletter-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.newsletter-section form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.newsletter-section input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletter-section button {
+    background-color: var(--btn-primary-bg);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.newsletter-section button:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+/* Trips Section */
+.trips-section {
+    padding: 2rem;
+    background-color: var(--accent1-color);
+}
+
+.trips-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.trip {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.trip img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.trip h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.trip p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.trip .btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.trip .btn-secondary:hover {
+    background-color: var(--btn-secondary-hover);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter-section form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .trip-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
