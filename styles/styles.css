@@ -1,9 +1,9 @@
 nav {
-    background-color: #00008b;
+    background-color: #000049;
     padding: 10px;
 }
 nav a {
-    color: #ffffff;
+    color: #fffedc;
     display: block;
     padding: 20px;
 }
@@ -17,7 +17,7 @@ main {
     text-align: center;
 }
 h1 {
-    color: #00008b;
+    color: #0000b3;
 }
 
 img {
@@ -36,5 +36,11 @@ main img {
     height: auto;
 }
 p {
-    padding: 10px;
+    padding: 0px;
 }
+footer {
+    background-color: #00008b;
+    color: #ffffff;
+    /*  text-align: center; */
+    box-align: center;
+} 
