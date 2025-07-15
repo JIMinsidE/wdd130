@@ -39,8 +39,7 @@ p {
     padding: 0px;
 }
 footer {
-    background-color: #00008b;
-    color: #ffffff;
-    /*  text-align: center; */
-    box-align: center;
+    margin-top: 15px;
+    border-top: 1px #000;
+    text-align: center;
 } 
